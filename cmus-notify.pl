@@ -299,7 +299,7 @@ sub main {
 			};
 		}
 		else { $icon = $vals->filename }
-		unshift(@args, "-h", "string:image-path:" . $icon) if -e $icon;
+		unshift(@args, "-i",  $icon) if -e $icon;
 	}
 
 	unless ($dunst) {
@@ -330,7 +330,7 @@ sub config { return q{
 # to use one or more, prepend to requested value with colon separator
 # e.g. b:artist iu:album ib:file
 
-artist i:title duration
+artist i:title duration covers
 }}
 
 # base64-encoded placeholder image for album art
